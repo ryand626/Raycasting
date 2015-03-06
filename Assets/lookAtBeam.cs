@@ -33,14 +33,11 @@ public class lookAtBeam : MonoBehaviour {
 	void checkHit(){
 		RaycastHit hit;
 		Ray testRay = new Ray(transform.position, target.position - transform.position);
-		Debug.DrawRay (testRay.origin, testRay.direction);
 
-		if(Physics.Raycast(testRay, out hit, 100)){
-			print ("RAYCASTIN");
+		if(Physics.Raycast(testRay, out hit, 500)){
 			line.SetPosition(1,hit.point);
 			line.SetVertexCount(3);
-			line.SetPosition(2, (hit.point-Vector3.Reflect(testRay.direction,hit.normal)*-1));
-			Debug.DrawRay(hit.point,Vector3.Reflect(testRay.direction,hit.normal));
+			line.SetPosition(2, (hit.point-Vector3.Reflect(testRay.direction,hit.normal)*-10));
 		}
 	}
 }
