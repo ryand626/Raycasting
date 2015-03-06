@@ -15,12 +15,12 @@ public class Button : MonoBehaviour {
 	void Update () {
 		if (on) {
 			if(textureDebounce != on){
-				renderer.material = Resources.Load<Material> ("select");
+				GetComponent<Renderer>().material = Resources.Load<Material> ("select");
 				textureDebounce = on;
 			}
 		} else {
 			if(textureDebounce != on){
-				renderer.material = Resources.Load<Material>("deselect");
+				GetComponent<Renderer>().material = Resources.Load<Material>("deselect");
 				textureDebounce = on;
 			}
 		}

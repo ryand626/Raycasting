@@ -9,6 +9,7 @@ public class point : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+		Debug.DrawRay(mouseRay.origin,mouseRay.direction);
 		if (Physics.Raycast (mouseRay, out hit,100)) {
 			if(hit.collider.name != "raypoint"){
 				print ("Hit " + hit.collider.name);
